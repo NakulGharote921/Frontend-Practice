@@ -27,7 +27,7 @@ function MyformH() {
     // }
     function inputHandler(e) {
         console.log(e.target);
-        console.log(e.target.value);90kk
+        console.log(e.target.value);
         
         
         
