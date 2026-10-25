@@ -1,7 +1,3 @@
-import { Email } from '@hugeicons/core-free-icons';
-// import { log } from 'console';
-// import { log } from 'console';
-
 import React, { useState } from 'react'
 
 function MyformH() {
@@ -26,11 +22,7 @@ function MyformH() {
 
     // }
     function inputHandler(e) {
-        console.log(e.target);
-        console.log(e.target.value);
-        
-        
-        
+
         const {name ,value} = e.target;
         Set_Data({...Data, [name]:value})
             
