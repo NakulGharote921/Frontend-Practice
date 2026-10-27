@@ -4,6 +4,7 @@ import Multiple from "./Componets/Multiple.jsx"
 import MyForm from './Componets/MyForm.jsx'
 import MyformH from './Componets/MyformH.jsx'
 import Apis from "./Componets/Apis.jsx"
+import MYApitest from "./Componets/MYApitest.jsx"
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <MyformH /> */}
       {/* <Multiple/> */}
       {/* <Checkbox/> */}
-      <Apis/>
+      {/* <Apis/> */}
+      <MYApitest/>
     </div>
   )
 }
