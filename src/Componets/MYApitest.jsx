@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 
 function MYApitest() {
+  const [idPUT , Setid] = useState();
+  
+  
     const [From_Data , SetData ] = useState({
       Name : "",
       age : "",
@@ -10,15 +13,16 @@ function MYApitest() {
     })
     console.log(From_Data);
     
-    function form_DataHandler(e) {
-      console.log(e);
+  function form_DataHandler(e) {
+      
       
         const {name , value} = e.target;
+        console.log(e);
        SetData({...From_Data , [name]: value});
         
       
     }
-    const [Data , set_Data] = useState(null);
+  const [Data , set_Data] = useState(null);
     async function Get_Data() {
         const Respose = await fetch("https://69c8e30a68edf52c954e101a.mockapi.io/TodoApi/TODOS")
         const Data = await Respose.json();
@@ -39,6 +43,16 @@ function MYApitest() {
       
     }
     async function Edit_data(e) {
+      
+     const Respose  = await fetch(`https://69c8e30a68edf52c954e101a.mockapi.io/TodoApi/TODOS/${idPUT}`, {
+        method:"PUT",
+        headers: {
+        "Content-Type": "application/json"
+      },
+        body: JSON.stringify(From_Data)
+       
+      })
+      Get_Data();
       
     }
   return (
@@ -70,21 +84,23 @@ function MYApitest() {
                 <div>Phone: {e.Phone}</div>
               </div>
             </div>
-            <button className="btn btn-soft btn-accent"onClick={()=>Edit_data(e)} >Edit</button>
+            <button className="btn btn-soft btn-accent"onClick={()=> {SetData({...e , edit_mode:true}); Setid(e.id)}  } >Edit</button>
             
           </div>
         ))}
       </div>
-        <button className="btn btn-soft btn-warning" onClick={Post_Data}>Add New User </button>
+        {From_Data.edit_mode==true?  <button className="btn btn-soft btn-warning" onClick={()=>Edit_data()}>Save User Details </button>
+        :<button className="btn btn-soft btn-warning" onClick={Post_Data}>Add New User </button>
+      }
+        {/* Add User */}
         <div >
-          <input type="text" placeholder="Name" name='Name' className="input input-error" onChange={(e)=>{form_DataHandler(e)}}/>
-          <input type="text" placeholder="Username" name='Username' className="input input-error" onChange={(e)=>{form_DataHandler(e)}}/>
-          <input type="text" placeholder="Phone" name='Phone' className="input input-error" onChange={(e)=>{form_DataHandler(e)}}/>
-          <input type="text" placeholder="age" name='age' className="input input-error" onChange={(e)=>{form_DataHandler(e)}}/>
-          <input type="text" placeholder="Alive" name='Alive' className="input input-error" onChange={(e)=>{form_DataHandler(e)}}/>
-
+          <input type="text" placeholder="Name" name='Name' value={From_Data.Name} className="input input-error" onChange={(e)=>{form_DataHandler(e)}}/>
+          <input type="text" placeholder="Username" name='Username' value={From_Data.Username} className="input input-error" onChange={(e)=>{form_DataHandler(e)}}/>
+          <input type="text" placeholder="Phone" name='Phone'value={From_Data.Phone} className="input input-error" onChange={(e)=>{form_DataHandler(e)}}/>
+          <input type="text" placeholder="age" name='age' value={From_Data.age} className="input input-error" onChange={(e)=>{form_DataHandler(e)}}/>
+          <input type="text" placeholder="Alive"  name='Alive' value={From_Data.Alive} className="input input-error" onChange={(e)=>{form_DataHandler(e)}}/>
         </div>
-        
+      
     </div>
   );
 }
