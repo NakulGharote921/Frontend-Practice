@@ -6,6 +6,7 @@ import MyformH from './Componets/MyformH.jsx'
 import Apis from "./Componets/Apis.jsx"
 import MYApitest from "./Componets/MYApitest.jsx"
 import Withaxios from "./Componets/Withaxios.jsx"
+import Axizos from "./Componets/Axizos.jsx"
 
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
       {/* <Multiple/> */}
       {/* <Checkbox/> */}
       {/* <Apis/> */}
-      <MYApitest/>
+      {/* <MYApitest/> */}
       {/* <Withaxios/> */}
       {/* <MUI/> */}
+      <Axizos/>
     </div>
   )
 }
