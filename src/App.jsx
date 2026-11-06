@@ -5,6 +5,7 @@ import MyForm from './Componets/MyForm.jsx'
 import MyformH from './Componets/MyformH.jsx'
 import Apis from "./Componets/Apis.jsx"
 import MYApitest from "./Componets/MYApitest.jsx"
+import Withaxios from "./Componets/Withaxios.jsx"
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       {/* <Checkbox/> */}
       {/* <Apis/> */}
       <MYApitest/>
+      {/* <Withaxios/> */}
+      {/* <MUI/> */}
     </div>
   )
 }
