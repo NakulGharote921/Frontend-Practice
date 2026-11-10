@@ -7,6 +7,7 @@ import Apis from "./Componets/Apis.jsx"
 import MYApitest from "./Componets/MYApitest.jsx"
 import Withaxios from "./Componets/Withaxios.jsx"
 import Axizos from "./Componets/Axizos.jsx"
+import Test from "./Componets/Test.jsx"
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       {/* <MYApitest/> */}
       {/* <Withaxios/> */}
       {/* <MUI/> */}
-      <Axizos/>
+      {/* <Axizos/> */}
+      <Test/>
     </div>
   )
 }
