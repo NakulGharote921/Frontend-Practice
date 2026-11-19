@@ -13,11 +13,12 @@ import { Routes , Route } from "react-router-dom";
 import Home from "./Componets/Routeing/Home.jsx"
 import About from "./Componets/Routeing/About.jsx"
 import Nakul from "./Componets/Routeing/Nakul.jsx"
+import ZOD from "./Componets/Routeing/ZOD.jsx"
 
 function App() {
   return (
     <div>
-     
+     <ZOD></ZOD>
     </div>  
   )
 }
