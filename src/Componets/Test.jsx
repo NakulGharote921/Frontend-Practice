@@ -28,10 +28,20 @@ function Test() {
         
         
     }
+    async function PutData() {
+            const Response = await axios.put(`https://69c8e30a68edf52c954e101a.mockapi.io/TodoApi/TODOS/${Form_Handle.id}`, Form_Handle)
+                Get_Data()
+            console.log(Form_Handle);
+        
+    }
     async function Post_Data() {
         const Respons = await axios.post("https://69c8e30a68edf52c954e101a.mockapi.io/TodoApi/TODOS", Form_Handle);
         Get_Data();
 
+    }
+    async function Delete(id) {
+                const Response = await axios.delete(`https://69c8e30a68edf52c954e101a.mockapi.io/TodoApi/TODOS/${id}`)
+                    Get_Data()
     }
     return (
         <div>
@@ -45,8 +55,8 @@ function Test() {
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6.47 7.08c.01-.04.03-.07.04-.11-.01.04-.03.07-.04.11" opacity=".28" /><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6.51 6.97C7.5 4.64 9.81 3 12.5 3c2.49 0 4.65 1.4 5.74 3.46.24.44.36.66.42.75.1.14.07.1.2.22.07.07.3.22.75.53 1.44.99 2.39 2.66 2.39 4.54 0 1.33-.47 2.55-1.26 3.5M6 9.5c0-.86.17-1.67.47-2.42-.33.8-.49 1.2-.57 1.32-.15.24-.03.11-.24.3-.11.09-.58.39-1.53.97C2.85 10.46 2 11.88 2 13.5c0 .93.28 1.78.76 2.5" opacity=".28" /><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 17.6c-1 1.2-2.15 2.29-3.44 3.23-.34.24-.78.24-1.12 0C10.15 19.89 9 18.8 8 17.6m4-5.37V21" />
                 </svg> </button>
                 <button className="btn btn-accent" onClick={()=>Post_Data()}>Post</button>
-                <button className="btn btn-info">Put</button>
-                <button className="btn btn-success">Delete</button>
+                <button className="btn btn-info" onClick={()=>PutData()}>Put</button>
+                <button className="btn btn-success" onClick={()=>Delete(Form_Handle.id)}>Delete</button>
             </div>
             <div>
                 {Data && Data.map((items) => (<div key={items.id} >

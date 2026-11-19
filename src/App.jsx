@@ -8,22 +8,17 @@ import MYApitest from "./Componets/MYApitest.jsx"
 import Withaxios from "./Componets/Withaxios.jsx"
 import Axizos from "./Componets/Axizos.jsx"
 import Test from "./Componets/Test.jsx"
+import NavBar from "./NavBar.jsx"
+import { Routes , Route } from "react-router-dom";
+import Home from "./Componets/Routeing/Home.jsx"
+import About from "./Componets/Routeing/About.jsx"
+import Nakul from "./Componets/Routeing/Nakul.jsx"
 
 function App() {
   return (
     <div>
-      {/* <Miniform /> */}
-      {/* <MyForm /> */}
-      {/* <MyformH /> */}
-      {/* <Multiple/> */}
-      {/* <Checkbox/> */}
-      {/* <Apis/> */}
-      {/* <MYApitest/> */}
-      {/* <Withaxios/> */}
-      {/* <MUI/> */}
-      {/* <Axizos/> */}
-      <Test/>
-    </div>
+     
+    </div>  
   )
 }
 
