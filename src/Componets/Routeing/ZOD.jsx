@@ -2,7 +2,7 @@ import { Password } from '@hugeicons/core-free-icons'
 import React from 'react'
 import { useState } from 'react'
 import { useForm } from "react-hook-form"
-import { z} from "zod"
+import { z } from "zod"
 import { zodResolver } from '@hookform/resolvers/zod';
 
 const FormSchema = z.object({
@@ -26,8 +26,8 @@ function ZOD() {
                 
                 <button type='submit' onClick={handleSubmit(Submitform)}>Submit</button>
                 <div className='grid place-content-center h-screen' >
-                    <label htmlFor="Name">Name : </label>
-                    <input type="text" {...register("Name")} id="Name" />
+                    <label htmlFor="Name" >Name : </label>
+                    <input type="text"  {...register("Name")} id="Name" />
                     {errors.Name?.message}
                     <label htmlFor="age">age : </label>
                     <input type="text" {...register("age")} id="age " />
